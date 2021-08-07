@@ -1,0 +1,13 @@
+{
+  "extends": ["plugin:react/recommended", "airbnb", "prettier", "next", "next/core-web-vitals"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-props-no-spreading": "warn"
+  }
+}
