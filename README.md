@@ -4,7 +4,7 @@ This is Country Finder, a [Next.js](https://nextjs.org/) project built with [Typ
 
 ## See the project in action
 
-### Check the app here => [Country-Finder-App]()
+### Check the app here => [Country-Finder-App](https://country-finder-theta.vercel.app/)
 ## Run the project locally
 
 First, install all dependencies by running
