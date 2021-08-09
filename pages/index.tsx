@@ -8,15 +8,14 @@ import {
   Country,
   CountryList,
   Language,
-  LanguageList,
+  LanguageList
 } from "@/utils/types";
 import { useQuery } from "@apollo/client";
 import Loading from "components/molecules/Loading";
 import NavBar from "components/molecules/NavBar";
 import CountryBasicInfoList from "components/organisms/CountryBasicInfoList";
 import SearchBox from "components/organisms/SearchBox";
-import { useRouter } from "next/dist/client/router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
   const { loading, data } = useQuery<CountryList>(GET_SIMPLE_COUNTRIES);
@@ -40,7 +39,7 @@ export default function Home() {
   // performance is ok. I would have added the "name" param in the api if it was mine,
   // to avoid this kind of workarounds.
 
-  const filterCountries = (value: String) => {
+  const filterCountries = useCallback((value: String) => {
     setLastSearch(value);
     const userInput = value.toLowerCase();
     const upperCaseUserInput = value.toUpperCase();
@@ -64,7 +63,7 @@ export default function Home() {
             languageCondition;
     });
     if (result) setFilteredCountries(result);
-  };
+  }, [continent, currency, data?.countries, language, onlyCode]);
 
   const toggleCheckbox = () => {
     setOnlyCode(!onlyCode);
@@ -72,7 +71,7 @@ export default function Home() {
 
   useEffect(() => {
     filterCountries(lastSearch);
-  }, [onlyCode, continent, currency, language]);
+  }, [onlyCode, continent, currency, language, filterCountries, lastSearch]);
 
   useEffect(() => {
     setCurrencies(

@@ -70,7 +70,7 @@ const CountryModal = ({
                       <div className="mt-4 ml-3 grid gap-6 grid-cols-3">
                         <SubtitledListItem
                           itemText={country.native}
-                          subtitleText="Native Language:"
+                          subtitleText="Native:"
                         />
                         <SubtitledListItem
                           itemText={country.capital}
