@@ -2,7 +2,6 @@
 import { Country } from "@/utils/types";
 import { Dialog, Transition } from "@headlessui/react";
 import { Dispatch, Fragment, SetStateAction, useRef } from "react";
-import CountryBasicInfo from "./CountryBasicInfo";
 import CountryBasicInfoData from "./CountryBasicInfoData";
 import SubtitledListItem from "./SubtitledListItem";
 
